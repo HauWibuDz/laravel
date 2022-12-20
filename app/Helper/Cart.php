@@ -39,6 +39,5 @@ class Cart {
     public function getContent()
     {
         return $this->items;
-        dd($this->items->quantity);
     }
 }
