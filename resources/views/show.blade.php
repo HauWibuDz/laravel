@@ -22,6 +22,14 @@
                     <p class="card-text">Trạng thái: {!! $product->status
                         ? '<span class="badge badge-pill badge-primary">In stock</span>'
                         : '<span class="badge badge-pill badge-danger">Out of stock</span>' !!}</p>
+
+                    <form action="{{route('cart.add',$product->id)}}" method="POST" >
+                        @csrf
+                        <div class="form-group">
+                            <input type="text" value="1" class="form-control" name="quantity">
+                        </div>
+                        <button type="submit" class="btn btn-block btn-success">Add to cart</button>
+                    </form>    
                 </div>
             </div>
         </div>

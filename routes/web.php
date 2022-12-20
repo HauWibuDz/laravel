@@ -7,6 +7,7 @@ use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\CartController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,9 +23,10 @@ use App\Http\Controllers\HomeController;
 //     return view('home');
 // })->name('home');
 Route::get('/', [HomeController::class, 'home'])->name('home');
-Route::get('danhmuc/{id}', [UserController::class, 'danhmuc'])->name('danhmuc');
+Route::get('danhmuc/{id}', [HomeController::class, 'danhmuc'])->name('danhmuc');
 Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
-
+Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
+Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
 
 
 Route::middleware('auth')->prefix('admin')->group(function () {

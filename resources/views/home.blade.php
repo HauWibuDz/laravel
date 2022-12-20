@@ -9,7 +9,7 @@
                         
                     </li>
                     @foreach ($categories as $item)
-                        <a href="{{route('danhmuc', $item->id)}}" class="list-group-item btn btn-success " width="100%">{{$item->name}}</a>
+                        <a href="{{route('danhmuc',$item->id)}}" class="list-group-item btn btn-success " width="100%">{{$item->name}}</a>
                     @endforeach
                 </ul>
 
