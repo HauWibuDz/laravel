@@ -22,8 +22,9 @@ class HomeController extends Controller
     }
     public function danhmuc($id)
     {
-        $product = Product::where('category_id',$id)->get();
-        $categories = Category::find($id);
-        return view('danhmuc',compact('product', 'categories'));
+        $category = Category::find($id);
+        $categories = Category::all();
+        // $product = $category->products->get();
+        return view('danhmuc',compact('categories', 'category'));
     }
 }

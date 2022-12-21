@@ -16,19 +16,10 @@
 
             </div>
             <div class="col-lg-10">
-                <div class="jumbotron container-fruid">
-                    <h1 class="display-3">Home ne</h1>
-                    <p class="lead">Jumbo helper text</p>
-                    <hr class="my-2">
-                    <p>More info</p>
-                    <p class="lead">
-                        <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
-                    </p>
-                </div>
                 <div class="container-fruid mt-5">
-                    <h1 class="text-center bg-danger">Sản phẩm theo danh mục {{$categories->category_id}}</h1>
+                    <h1 class="text-center bg-danger">Sản phẩm theo danh mục: {{$category->name}} </h1>
                     <div class="row">
-                        @foreach ($product as $item)
+                        @foreach ($category->products as $item)
                             <div class="col-lg-4 mt-4">
                                 <div class="card">
                                     <img class="card-img-top" src="{{ url('uploads') }}/{{ $item->image }}" alt=""

@@ -35,7 +35,7 @@
                                         <div class="card-body ">
                                             <h4 class="card-title text-center">{{ $item->name }}</h4>
                                             <p class="card-text">Giá: {{ $item->price }}</p>
-                                            <p class="card-text">Danh mục: {{ $item->categories->name }}</p>
+                                            <p class="card-text ">Danh mục: {{ $item->categories->name }}</p>
                                             <p class="card-text">Mô tả: {{ $item->description }}</p>
                                             <p class="card-text">Trạng thái: {!! $item->status
                                                 ? '<span class="badge badge-pill badge-primary">In stock</span>'

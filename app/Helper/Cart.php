@@ -28,13 +28,20 @@ class Cart {
         }
         session(['cart'=>$this->items]);
     }
-    public function update()
+    public function update($id,$quantity)
     {
-
+        if(isset($this->items[$id])){
+            $this->items[$id]['quantity'] =$quantity;
+            session(['cart'=>$this->items]);
+        }
     }
-    public function delete()
+    
+    public function delete($id)
     {
-
+        // if(isset($this->items[$id])){
+        //     $this->items[$id]['quantity'] =$quantity;
+        //     session(['cart'=>$this->items]);
+        // }
     }
     public function getContent()
     {

@@ -18,17 +18,21 @@ class CartController extends Controller
         $cart->add($product, $req->quantity);
         if ($cart) {
             // return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
-            return redirect()->back()->with('success', 'Thêm mới thành công');
+            return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
         }
     }
     public function showCart(Request $req)
     {
-        $cart = new Cart();
-        $cart->getContent();
-        // $cart = OrderDetail::create($req->all());
-        // dd($cart->getContent());
+        $carts = new Cart();
+        $cart = $carts->getContent();
+        // dd($cart);
         $product = Product::all();
         $categories = Category::all();
-        return view('showcart', compact('product', 'categories', 'cart'));
+        return view('showCart', compact('product', 'categories', 'cart'));
+    }
+    public function update(Request $req,$id)
+    {
+        $cart = new Cart();
+        $cart->update($id,$req->quantity);
     }
 }

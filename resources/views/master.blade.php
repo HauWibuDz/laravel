@@ -23,7 +23,7 @@
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
                 <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Danh mục</a>
@@ -52,9 +52,9 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-
-
-            <a href="{{ route('showcart') }}"><button class="btn btn-primary">Cart</button></a>
+            <form class="form-inline ml-3 my-2 my-lg-0">
+                <a href="{{ route('showcart') }}"><button class="btn btn-primary form-control mr-sm-2">Cart</button></a>
+            </form>
         </div>
 
 
