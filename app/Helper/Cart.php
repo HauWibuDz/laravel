@@ -3,8 +3,8 @@ namespace App\Helper;
 class Cart {
     
     public $items = [];
-    private $totalPrice = 0;
-    private $totalQty = 0;
+    // private $totalPrice = 0;
+    // private $totalQty = 0;
 
     public function __construct()
     {   
@@ -31,20 +31,28 @@ class Cart {
     public function update($id,$quantity)
     {
         if(isset($this->items[$id])){
-            $this->items[$id]['quantity'] =$quantity;
+            $this->items[$id]['quantity'] = $quantity;
             session(['cart'=>$this->items]);
         }
     }
     
     public function delete($id)
     {
-        // if(isset($this->items[$id])){
-        //     $this->items[$id]['quantity'] =$quantity;
-        //     session(['cart'=>$this->items]);
-        // }
+        if(isset($this->items[$id])){
+            unset($this->items[$id]);
+            session(['cart'=>$this->items]);
+        }
     }
     public function getContent()
     {
         return $this->items;
+    }
+    public function getTotal()
+    {
+        $totalQty=0;
+        foreach ($this->items as $item){
+            $totalQty += $item['quantity'];
+        }
+        return $totalQty;
     }
 }

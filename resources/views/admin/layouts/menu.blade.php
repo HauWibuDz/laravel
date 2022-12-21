@@ -28,6 +28,12 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search" name="keyword">
                 <button  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+            {{-- <form class="form-inline ml-3 my-2 my-lg-0">
+                <a href="{{ route('showcart') }}" class="btn btn-primary form-control mr-sm-2">
+                    Cart 
+                    <span class="badge badge-primary">{{ $cart->getTotal() }}</span>
+                </a>
+            </form> --}}
             
                 
             

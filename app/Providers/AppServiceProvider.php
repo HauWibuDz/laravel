@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\Category;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\ServiceProvider;
-
+use App\Helper\Cart;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -26,5 +27,17 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
        Paginator::useBootstrapFive();
+        
+       view()->composer('master',function($view){
+        $cats = Category::get();
+        $cart = new Cart();
+        $view->with(compact('cats','cart'));
+       });
+
+
+       
+    //    View::share('cart',$cart);
     }
+
+    
 }

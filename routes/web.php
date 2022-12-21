@@ -27,7 +27,8 @@ Route::get('/danhmuc/{id}', [HomeController::class, 'danhmuc'])->name('danhmuc')
 Route::get('/show/{id}', [HomeController::class, 'show'])->name('show');
 Route::get('/showCart', [CartController::class, 'showCart'])->name('showcart');
 Route::post('/cart/{id}', [CartController::class, 'add'])->name('cart.add');
-Route::post('update-cart/{id}', [CartController::class, 'update-cart'])->name('cart.update');
+Route::post('update-cart/{id}', [CartController::class, 'update'])->name('cart.update');
+Route::get('delete-cart/{id}', [CartController::class, 'delete'])->name('cart.delete');
 
 Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/', [AdminController::class, 'index'])->name('admin.index');
