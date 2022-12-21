@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    
+
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">Navbar</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId"
@@ -52,6 +52,12 @@
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
+
+
+            <a href="{{ route('showcart') }}"><button class="btn btn-primary">Cart</button></a>
+        </div>
+
+
         </div>
     </nav>
 

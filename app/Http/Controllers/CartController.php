@@ -17,7 +17,8 @@ class CartController extends Controller
         $cart = new Cart();
         $cart->add($product, $req->quantity);
         if ($cart) {
-            return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
+            // return redirect()->route('showcart')->with('success', 'Thêm mới thành công');
+            return redirect()->back()->with('success', 'Thêm mới thành công');
         }
     }
     public function showCart(Request $req)
@@ -25,9 +26,9 @@ class CartController extends Controller
         $cart = new Cart();
         $cart->getContent();
         // $cart = OrderDetail::create($req->all());
-        dd($cart->getContent());
-        // $product = Product::all();
-        // $categories = Category::all();
-        // return view('showcart', compact('product', 'categories', 'cart'));
+        // dd($cart->getContent());
+        $product = Product::all();
+        $categories = Category::all();
+        return view('showcart', compact('product', 'categories', 'cart'));
     }
 }
